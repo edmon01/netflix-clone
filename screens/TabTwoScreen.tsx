@@ -1,32 +1,33 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
+import { MaterialIcons, Ionicons, AntDesign } from '@expo/vector-icons';
 
-import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 
 export default function TabTwoScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab Two</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/TabTwoScreen.tsx" />
+      {/* <View style={styles.headerActions}>
+        <MaterialIcons name="connected-tv" size={24} color="white" />
+        <Ionicons name="search" size={24} color="white" />
+        <AntDesign name="profile" size={24} color="white" />
+      </View> */}
     </View>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
+    flexDirection: 'row',
   },
   title: {
     fontSize: 20,
-    fontWeight: 'bold',
   },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
+  headerActions: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: 96,
+    paddingTop: 12
+  }
 });
